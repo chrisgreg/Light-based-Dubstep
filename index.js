@@ -12,8 +12,10 @@ var app = require('express')();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
+app.use(express.static('static'));
+
 app.get('/', function(req, res){
-    res.send('<html><head><script src="/socket.io/socket.io.js"></script><script>var socket = io(); socket.on(\'intensity\', function (intensity) { console.log(intensity) })</script></head><body><h1>Barry White ♪♬♩♫</h1><button onclick="socket.emit(\'calibrate\');">💡</button></body></html>');
+    res.send('<html><head><script src="/socket.io/socket.io.js"></script><script>var socket = io(); socket.on(\'intensity\', function (intensity) { console.log(intensity) })</script></head><body><h1>Barry White ♪♬♩♫</h1><button onclick="socket.emit(\'calibrate\');">💡</button><script src="/duttybass.js"></script></body></html>');
 });
 
 var max = 0;
