@@ -14,10 +14,10 @@ var ambient = ambientlib.use(tessel.port['A']);
 
 ambient.on('ready', function () {
 
-  // Calibrate
-  calibrate(function(value) {
-    console.log("Max is: " + value);
-  });
+  // // Calibrate
+  // calibrate(function(value) {
+  //   console.log("Max is: " + value);
+  // });
 
  // Reference Data:
  // // Get points of light and sound data.
@@ -54,4 +54,15 @@ function calibrate(callback){
       })
     }
   }
+}
+
+// function normaliseData(max) {
+//   normalized_x = (x - minimum)/(maximum - minimum)
+//   var normalised =
+// }
+
+
+
+module.exports = {
+  calibrate: calibrate
 }
